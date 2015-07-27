@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Guessing Game</title>
+	<link rel="stylesheet" type="text/css" href="../node_modules/normalize.css/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="../node_modules/flexbox/index.min.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
@@ -16,9 +18,22 @@
 
 <div>
 	<h3>Login</h3>
-		<input></input>
+			<label for="username">Username: </label>
+			<input type="text" name="username"></input>
+		<br>
+			<label for="pword">Password: </label>
+			<input type="text" id="pword"></input>
+		<button id="submit">Submit</button>
 	<h3>Sign Up</h3>
-		<input></input>
+		<label for="username">Username: </label>
+		<input type="text" name="username"></input>
+		<br>
+			<label for="pword">Password: </label>
+			<input type="text" id="pword"></input>
+		<br>
+			<label for="verify">Verify Password: </label>
+			<input type="text" id="verify"></input>
+		<button id="submit">Submit</button>
 </div>
 
 	<div>
