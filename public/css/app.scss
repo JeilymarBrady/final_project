@@ -1,0 +1,17 @@
+nav {
+	background-color: gray;
+	ul {
+		li {
+			background-color: lighten(gray, 20%);
+			color: white;
+		}
+	}
+}
+div {
+	background-color: steelblue;
+	color: white;
+	h3 {
+		color: white;
+		font: Arial, sans-serif;
+	}
+}
