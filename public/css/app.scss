@@ -5,12 +5,20 @@ nav, div, footer {
 }
 nav {
 	background-color: gray;
+	padding-top: 0;
 	ul {
+		margin: 0;
+		padding: 0;
 		li {
-			background-color: lighten(gray, 20%);
-			color: white;
+			float: right;
 			list-style-type: none;
 			display: inline-block;
+			padding: 15px;
+			text-decoration: none;
+			color: white;
+			&:hover {
+				background-color: lighten(gray, 20%);
+			}
 		}
 	}
 }
@@ -37,5 +45,4 @@ div {
 footer {
 	background-color: gray;
 	height: 50px;
-
 }
