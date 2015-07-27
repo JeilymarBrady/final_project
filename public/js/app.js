@@ -2,6 +2,7 @@ var cards_array = ['A', 'A', 'B','B','C','C','D','D','E','E','F','F','G','G','H'
 var values = [];
 var ids = [];
 var flipped = 0;
+var clicks = 0;
 Array.prototype.shuffle = function() {
   var i = this.length, j, temp;
   while(--i> 0){
@@ -12,6 +13,8 @@ Array.prototype.shuffle = function() {
   }
 };
 function newBoard(){
+  //console.log("clicks done: " + clicks);
+  clicks = 0;
   flipped = 0;
   var msg = '';
   cards_array.shuffle();
@@ -28,9 +31,11 @@ function flipTile(tile, val){
     if(values.length === 0 ){
       values.push(val);
       ids.push(tile.id);
+      clicks++;
     } else if(values.length == 1){
       values.push(val);
       ids.push(tile.id);
+      clicks++;
       if(values[0] === values[1]){
         flipped += 2;
         values = [];
