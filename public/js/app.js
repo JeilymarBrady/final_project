@@ -20,6 +20,20 @@
 //       }
 //     }
     //pullFromImgur();
+    //var cards_array = [];
+// for(var i = 0; i < 2; i++){
+//   cards_array.push('./bunch/alice.png');
+//   cards_array.push('./bunch/bobby.png');
+//   cards_array.push('./bunch/carol.png');
+//   cards_array.push('./bunch/cindy.png');
+//   cards_array.push('./bunch/greg.png');
+//   cards_array.push('./bunch/jan.png');
+//   cards_array.push('./bunch/marcia.png');
+//   cards_array.push('./bunch/mike.png');
+//   cards_array.push('./bunch/peter.png');
+//   cards_array.push('./bunch/tiger.png');
+// }
+// console.dir(cards_array);
 //game code
 var cards_array = ['A', 'A', 'B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
 var values = [];
