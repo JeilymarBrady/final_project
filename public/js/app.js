@@ -72,7 +72,7 @@ function newBoard(){
         values.push(val);
         ids.push(tile.id);
         clicks++;
-      } else if(values.length == 1){
+      } else if(values.length === 1){
         values.push(val);
         ids.push(tile.id);
         clicks++;
@@ -80,7 +80,7 @@ function newBoard(){
           flipped += 2;
           values = [];
           ids = [];
-          if(flipped == cards_array.length){ //game is over, user won
+          if(flipped === cards_array.length){ //game is over, user won
             document.getElementById('board').innerHTML = "";
             newBoard();//create new board
           } else {
