@@ -58,17 +58,10 @@ nav {
 		}
 	}
 }
-div {
-	background-color: #EFB420;
-	color: white;
-	h3 {
-		color: white;
-		font: Arial, sans-serif;
-	}
-}
 footer {
 	background-color: #FFD776;
 	height: 100px;
+	bottom: 0;
 }
 
 /* HOME PAGE */
@@ -87,7 +80,23 @@ footer {
 	}
 }
 #main {
-	background-color: lighten(orange, 20%);
+	background-color: #F2F2F2;
 	height: 400px;
+	position: relative;
+}
+
+/* LAYOUT */
+.col-2 {
+	position: absolute;
+	top: 0;
+	float: left;
+	vertical-align: center;
+	width: 45%;
+	height: inherit;
+	margin: 5% 0 5% 0;
+	background-color: #F8F8F8;
+	p {
+		padding: 5%;
+	}
 }
 

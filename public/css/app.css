@@ -34,16 +34,10 @@ nav {
       nav ul li:hover {
         background-color: #FFD776; }
 
-div {
-  background-color: #EFB420;
-  color: white; }
-  div h3 {
-    color: white;
-    font: Arial, sans-serif; }
-
 footer {
   background-color: #FFD776;
-  height: 100px; }
+  height: 100px;
+  bottom: 0; }
 
 /* HOME PAGE */
 #hero {
@@ -71,7 +65,21 @@ footer {
       box-shadow: 1px 1px 2px rgba(51, 112, 255, 0.9); }
 
 #main {
-  background-color: #ffc966;
-  height: 400px; }
+  background-color: #F2F2F2;
+  height: 400px;
+  position: relative; }
+
+/* LAYOUT */
+.col-2 {
+  position: absolute;
+  top: 0;
+  float: left;
+  vertical-align: center;
+  width: 45%;
+  height: inherit;
+  margin: 5% 0 5% 0;
+  background-color: #F8F8F8; }
+  .col-2 p {
+    padding: 5%; }
 
 /*# sourceMappingURL=app.css.map */
