@@ -30,7 +30,7 @@
 }
 nav, div, footer {
 	float:left;
-	clear:none; 
+	clear:none;
 	width: 100%;
 }
 h1, h2, h3, h4 {
@@ -83,6 +83,11 @@ footer {
 	background-color: #F2F2F2;
 	height: 400px;
 	position: relative;
+	text-align: center;
+	form {
+		display: inline-block;
+		vertical-align: text-top;
+	}
 }
 
 /* LAYOUT */

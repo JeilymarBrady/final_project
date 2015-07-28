@@ -67,7 +67,11 @@ footer {
 #main {
   background-color: #F2F2F2;
   height: 400px;
-  position: relative; }
+  position: relative;
+  text-align: center; }
+  #main form {
+    display: inline-block;
+    vertical-align: text-top; }
 
 /* LAYOUT */
 .col-2 {
