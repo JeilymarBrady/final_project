@@ -17,6 +17,7 @@ createNewUser.addEventListener('submit', function(e) {
       if (!(checkForDoubles(userName, userAry))) {
       userAry.push(new Users(userName, passWord, 0));
       console.dir(userAry);
+      saveLocalData();
     }
   }
 });
@@ -56,6 +57,36 @@ logIn.addEventListener('submit', function(e) {
   }
 });
 
+var saveLocalData = function() {
+  localStorage.setItem("userAry", JSON.stringify(userAry));
+  // localStorage.setItem("righty", JSON.stringify(photoAry));
+  console.log(userAry);
+  console.log('hello from save local data')
+};
+
+if(!(localStorage.getItem("userAry"))){
+  saveGame();
+} else {
+  var newArray = JSON.parse(localStorage.getItem('userAry'));
+  for(var i = 0; i < newArray.length; i++){
+    userAry[i] = newArray[i];
+  }
+};
+
+
+var getUserScore = function() {
+var userScore = [];
+  for (var i = 0; i < userAry.length; i++) {
+    userScore.push(userAry[i].score);
+  }
+  userScore.sort(function(a, b) {
+      return a - b;
+    }
+  );
+  return userScore;
+  console.log(userScore);
+};
+console.log(getUserScore());
 
 
 
