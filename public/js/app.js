@@ -1,41 +1,44 @@
-// $(document).ready(function() {
-//   var pics = [];
-//   $.ajax({
-//     url: 'https://api.imgur.com/3/album/b8p29#0.json',
-//     method: 'GET',
-//     headers: {
-//       'Authorization': 'Client-ID fc919a2e4fa23ab'
-//     }
-//   })
-//   .done(function(res) {
-//     pics = res.data.images;
-//     //Pushes picture links from pics to cards_array
-//     //var cards_array = [];
-//     function pullFromImgur() {
-//       for(var i = 0; i < 2; i++){
-//         for(var j = 0; j < pics.length; j++){
-//           cards_array.push(pics[j].link);
-//         }
-//         console.dir(cards_array);
-//       }
-//     }
-    //pullFromImgur();
-    //var cards_array = [];
+$(document).ready(function() {
+  var pics;
+  $.ajax({
+    url: 'https://api.imgur.com/3/album/b8p29#0.json',
+    method: 'GET',
+    headers: {
+      'Authorization': 'Client-ID fc919a2e4fa23ab'
+    }
+  })
+  .done(function(res) {
+    pics = res.data.images;
+    //Pushes picture links from pics to cards_array
+    var Pics = function(path){
+      this.path = path;
+    };
+    var cards_array = [];
+    function pullFromImgur() {
+      for(var i = 0; i < 2; i++){
+        for(var j = 0; j < pics.length; j++){
+           cards_array.push(new Pics(pics[j].link));
+        }
+        console.dir(cards_array);
+      }
+    }
+    pullFromImgur();
+//     var cards_array = [];
 // for(var i = 0; i < 2; i++){
-//   cards_array.push('./bunch/alice.png');
-//   cards_array.push('./bunch/bobby.png');
-//   cards_array.push('./bunch/carol.png');
-//   cards_array.push('./bunch/cindy.png');
-//   cards_array.push('./bunch/greg.png');
-//   cards_array.push('./bunch/jan.png');
-//   cards_array.push('./bunch/marcia.png');
-//   cards_array.push('./bunch/mike.png');
-//   cards_array.push('./bunch/peter.png');
-//   cards_array.push('./bunch/tiger.png');
+//   cards_array.push(new Pics('./js/bunch/alice.png'));
+//   cards_array.push('./js/bunch/bobby.png');
+//   cards_array.push('./js/bunch/carol.png');
+//   cards_array.push('./js/bunch/cindy.png');
+//   cards_array.push('./js/bunch/greg.png');
+//   cards_array.push('./js/bunch/jan.png');
+//   cards_array.push('./js/bunch/marcia.png');
+//   cards_array.push('./js/bunch/mike.png');
+//   cards_array.push('./js/bunch/peter.png');
+//   cards_array.push('./js/bunch/tiger.png');
 // }
 // console.dir(cards_array);
 //game code
-var cards_array = ['A', 'A', 'B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
+// var cards_array = ['A', 'A', 'B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
 var values = [];
 var ids = [];
 var flipped = 0;
@@ -56,54 +59,54 @@ function newBoard(){
   var msg = '';
   cards_array.shuffle();
   for(var i = 0; i < cards_array.length; i++){
-    msg += '<div id="tile_'+i+'" onclick="flipTile(this,\''+cards_array[i]+'\')"></div>';
+    msg += '<div id="tile_'+i+'" onclick="flipTile(this,\''+cards_array[i].path +'\')"></div>';
   }
   document.getElementById('board').innerHTML = msg;
 }
 //window.addEventListener for load of game (newBoard());
-function flipTile(tile, val){
-  if(tile.innerHTML === "" && values.length < 2){
-    tile.style.background = '#FFF'; //not needed with image
-    tile.innerHTML = val; //change val to img
-    if(values.length === 0 ){
-      values.push(val);
-      ids.push(tile.id);
-      clicks++;
-    } else if(values.length == 1){
-      values.push(val);
-      ids.push(tile.id);
-      clicks++;
-      if(values[0] === values[1]){
-        flipped += 2;
-        values = [];
-        ids = [];
-        if(flipped == cards_array.length){ //game is over, user won
-          document.getElementById('board').innerHTML = "";
-          newBoard();//create new board
-        } else {
-          function flip(){
-            var card_1 = document.getElementById(ids[0]);
-            var card_2 = document.getElementById(ids[1]);
-            card_1.style.background = 'url(logo.png) no-repeat';
-            card_2.style.background = 'url(logo.png) no-repeat';
-            card_1.style.backgroundSize = 'cover';
-            card_2.style.backgroundSize = 'cover';
-            card_1.style.backgroundPosition = 'center';
-            card_2.style.backgroundPosition = 'center';
-            card_1.innerHTML = '';
-            card_2.innerHTML = '';
-            values = [];
-            ids = [];
-          }//http://imgur.com/lA0KNNt
+  function flipTile(tile, val){
+    if(tile.innerHTML === "" && values.length < 2){
+      tile.style.background = '#FFF'; //not needed with image
+      tile.innerHTML = '<img src=\'' + cards_array[0].path + '\'/>';//change val to img
+      if(values.length === 0 ){
+        values.push(val);
+        ids.push(tile.id);
+        clicks++;
+      } else if(values.length == 1){
+        values.push(val);
+        ids.push(tile.id);
+        clicks++;
+        if(values[0] === values[1]){
+          flipped += 2;
+          values = [];
+          ids = [];
+          if(flipped == cards_array.length){ //game is over, user won
+            document.getElementById('board').innerHTML = "";
+            newBoard();//create new board
+          } else {
+            function flip(){
+              var card_1 = document.getElementById(ids[0]);
+              var card_2 = document.getElementById(ids[1]);
+              card_1.style.background = 'url(logo.png) no-repeat';
+              card_2.style.background = 'url(logo.png) no-repeat';
+              card_1.style.backgroundSize = 'cover';
+              card_2.style.backgroundSize = 'cover';
+              card_1.style.backgroundPosition = 'center';
+              card_2.style.backgroundPosition = 'center';
+              card_1.innerHTML = '';
+              card_2.innerHTML = '';
+              values = [];
+              ids = [];
+            }//http://imgur.com/lA0KNNt
+          }
         }
+        setTimeout(flip, 100);
       }
-      setTimeout(flip, 100);
     }
   }
-}
 newBoard();
-//   })
-//   .fail(function(err) {
-//     console.log(err);
-//   });
-// });
+  })
+  .fail(function(err) {
+    console.log(err);
+  });
+});
