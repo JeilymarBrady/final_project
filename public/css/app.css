@@ -86,4 +86,9 @@ footer {
   .col-2 p {
     padding: 5%; }
 
+/* ABOUT US */
+table {
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  text-transform: uppercase; }
+
 /*# sourceMappingURL=app.css.map */
