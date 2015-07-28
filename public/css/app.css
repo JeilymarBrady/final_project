@@ -74,21 +74,24 @@ footer {
     vertical-align: text-top; }
 
 /* LAYOUT */
-.col-2 {
-  position: absolute;
-  top: 0;
-  float: left;
-  vertical-align: center;
-  width: 45%;
-  height: inherit;
-  margin: 5% 0 5% 0;
-  background-color: #F8F8F8; }
-  .col-2 p {
-    padding: 5%; }
-
+/*.col-2 {
+	position: absolute;
+	top: 0;
+	float: left;
+	vertical-align: center;
+	width: 45%;
+	height: inherit;
+	margin: 5% 0 5% 0;
+	background-color: #F8F8F8;
+	p {
+		padding: 5%;
+	}
+}*/
 /* ABOUT US */
-table {
-  font-family: 'Roboto Slab', Arial, sans-serif;
-  text-transform: uppercase; }
+#jeily img, #jose img, #stuart img, #emily img {
+  border-radius: 150px;
+  width: 150px;
+  border: 0;
+  display: inline; }
 
 /*# sourceMappingURL=app.css.map */
