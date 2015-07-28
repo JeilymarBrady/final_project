@@ -1,7 +1,7 @@
 var Users = function(userName, passWord, score) {
   this.userName = userName;
   this.passWord = passWord;
-  this.score = 0;
+  this.score;
 };
 
 var userAry = [];
@@ -64,18 +64,8 @@ var saveLocalData = function() {
   console.log('hello from save local data')
 };
 
-if(!(localStorage.getItem("userAry"))){
-  saveGame();
-} else {
-  var newArray = JSON.parse(localStorage.getItem('userAry'));
-  for(var i = 0; i < newArray.length; i++){
-    userAry[i] = newArray[i];
-  }
-};
-
-
-var getUserScore = function() {
 var userScore = [];
+var getUserScore = function(userAry) {
   for (var i = 0; i < userAry.length; i++) {
     userScore.push(userAry[i].score);
   }
@@ -84,10 +74,35 @@ var userScore = [];
     }
   );
   return userScore;
-  console.log(userScore);
 };
-console.log(getUserScore());
+// getUserScore(userAry);
+// console.log(userScore);
+// console.dir(userScore[3]);
 
+var renderScore = function() {
+  getUserScore(userAry);
+  var main = document.getElementById('score-board');
+  var addRow = document.createElement('tr');
+  var addUser = document.createElement('th');
+  addUser.innerHTML = userAry[0].userName;
+  addRow.appendChild(addUser);
 
-
-// Users(document.getElementById('user-name'), document.getElementById('pass-word'), 0);
+    for (var i = 0; i < 4; i++) {
+      var addScore = document.createElement('td');
+      addScore.innerHTML = userScore[i]
+      addRow.appendChild(addScore);
+      main.appendChild(addRow);
+      }
+  console.log(addRow);
+};
+renderScore();
+console.log(userScore);
+console.dir(userScore[3]);
+if(!(localStorage.getItem("userAry"))){
+  saveLocalData();
+} else {
+  var newArray = JSON.parse(localStorage.getItem('userAry'));
+  for(var i = 0; i < newArray.length; i++){
+    userAry[i] = newArray[i];
+  }
+};
