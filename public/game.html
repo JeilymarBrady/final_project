@@ -2,11 +2,39 @@
 <html>
 <head>
   <title>Game</title>
-  <link rel="stylesheet" type="text/css" href="../node_modules/normalize.css/normalize.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../node_modules/normalize.css/normalize.min.css"> -->
   <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.grey-deep_orange.min.css" />
   <link rel="stylesheet " type="text/css" href="css/app.css">
   <link href='http://fonts.googleapis.com/css?family=Domine|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.grey-deep_orange.min.css" />
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+  <style>
+  div#board{
+    background: purple;
+    border:#999 1px solid;
+    width:650px;
+    height:540px;
+    padding:24px;
+    margin:0px auto;
+    text-align: center;
+  }
+  div#board > img{
+    background-color: none;
+    size: 100% 100%;
+    position: center;
+    border: #CF4A30 1px solid;
+    width:100px;
+    height:100px;
+    float:left;
+    margin:10px;
+    padding:2px;
+    font-size:64px;
+    cursor:pointer;
+    text-align:center;
+  }
+  </style>
 </head>
 <body>
 
@@ -20,6 +48,41 @@
     </ul>
   </nav>
 
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+  <body>
+    <p>sign up</p>
+    <form action="#" id="user-input">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+        <input class="mdl-textfield__input" type="text" id="user-name" />
+        <label class="mdl-textfield__label" for="user-n ame">User Name</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+        <input class="mdl-textfield__input" type="password" id="pass-word" />
+        <label class="mdl-textfield__label" for="sample3">Password</label>
+      </div>
+      <button type="submit" id="submit">submit</button>
+    </form>
+    <p>sing in</p>
+    <form action="#" id="user-input-login">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+        <input class="mdl-textfield__input" type="text" id="user-name" />
+        <label class="mdl-textfield__label" for="user-name">User Name</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+        <input class="mdl-textfield__input" type="password" id="pass-word" />
+        <label class="mdl-textfield__label" for="sample3">Password</label>
+      </div>
+      <button type="submit" id="submit">submit</button>
+    </form>
+    <table id="score-board">
+         <tr>
+           <th>Here is your score: </th>
+        </tr>
+       </table>
+<div id="board"></div>
 <div id="main">
   <h1>Game Time!</h1>
 </div>
@@ -30,6 +93,6 @@
       <img class="social" src="img/twitter.svg">
     </div>
 </footer>
-<script></script>
+<script src="js/app.js"></script>
 </body>
 </html>
