@@ -79,21 +79,6 @@ footer {
     display: inline-block;
     vertical-align: text-top; }
 
-/* ABOUT US */
-#main-about {
-  position: relative;
-  width: 100%;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center; }
-
-.us {
-  width: 25%;
-  display: inline-block; }
-  .us img {
-    border-radius: 150px;
-    width: 150px; }
-
 #userLogin {
   background-color: white;
   height: 400px;
@@ -118,5 +103,21 @@ footer {
       #userLogin #user-input button:hover {
         cursor: pointer;
         background-color: #ff4d51; }
+
+/* ABOUT US */
+.us {
+  width: 25%;
+  display: inline-block;
+  margin-bottom: 5em; }
+  .us a {
+    text-decoration: none;
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-transform: capitalize;
+    color: orange; }
+  .us img {
+    border-radius: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+    border: 3px solid orange; }
 
 /*# sourceMappingURL=app.css.map */

@@ -24,7 +24,7 @@
 
 /* GLOBAL STYLES */
 *, *:focus {
-	box-sizing: border-box;      
+	box-sizing: border-box;
   outline: 0;
 	outline: none;
 }
@@ -122,21 +122,22 @@ footer {
 			margin: 1em auto;
 		}
 	}
-}*/
+}
 
 /* ABOUT US */
-#main-about {
-	position: relative;
-	width: 100%;
-	display: inline-block;
-	vertical-align: middle;
-	text-align: center;
-}
 .us {
 	width: 25%;
 	display: inline-block;
+	margin-bottom: 5em;
+	a {
+		text-decoration: none;
+		@include subtitles(orange);
+	}
 	img {
 		border-radius: 150px;
 		width: 150px;
+		margin-bottom: 20px;
+		border: 3px solid orange;
 	}
 }
+
