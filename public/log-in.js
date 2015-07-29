@@ -6,6 +6,7 @@ var Users = function(userName, passWord, score) {
 
 var userAry = [];
 var logInStatus = false
+
 var createNewUser = document.getElementById('user-input');
 createNewUser.addEventListener('submit', function(e) {
   e.preventDefault();
@@ -18,21 +19,21 @@ createNewUser.addEventListener('submit', function(e) {
       userAry.push(new Users(userName, passWord, 0));
       console.dir(userAry);
       saveLocalData();
-    }
+      }
   }
 });
 
 function checkForDoubles(userName, userAry) {
   for (var i = 0; i < userAry.length; i++) {
     if (userName == userAry[i].userName) return true;
-  }
+    }
   return false;
 };
 
 function checkForPassword(passWord, userAry) {
   for (var i = 0; i < userAry.length; i++) {
     if (passWord == userAry[i].passWord) return true;
-  }
+    }
   return false;
 };
 
@@ -48,9 +49,9 @@ logIn.addEventListener('submit', function(e) {
       if(checkForPassword(passWord, userAry)) {
       logInStatus = true;
       console.log(logInStatus);
-    } else {
+      } else {
       alert("Wrong PassWord or User name");
-    }
+      }
     } else {
       alert("Wrong PassWord or User name");
     }
