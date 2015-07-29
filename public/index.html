@@ -3,8 +3,10 @@
 <head>
 	<title>Guessing Game</title>
 	<link rel="stylesheet" type="text/css" href="../node_modules/normalize.css/normalize.min.css">
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.grey-deep_orange.min.css" />
 	<link rel="stylesheet " type="text/css" href="css/app.css">
-	<link rel="stylesheet" type="text/css" href="<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>">
+	<link href='http://fonts.googleapis.com/css?family=Domine|Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
 </head>
 <body>
 	<nav class="row">
@@ -18,29 +20,30 @@
 	<div id="hero">
 		<h1>Memory Game</h1>
 		<p>Put your memory to the test!</p>
-		<a href="game.html"><button>Play</button></a>
 	</div>
-	<div id="main">
-		<form>
-			<p>Login</p>
-			<label for="username">Username: </label>
-			<input type="text" id="username"></input>
-			<br>
-			<label for="pass">Password: </label>
-			<input type="text" id="pass"></input>
-		</form>
-		<form>
-			<p>Sign Up</p>
-			<label for="username">Username: </label>
-			<input type="text" id="username"></input>
-			<br>
-			<label for="pass">Password:  </label>
-			<input type="text" id="pass"></input>
-			<br>
-			<label for="verify">Verify: </label>
-			<input type="text" id="verify"></input>
-		</form>
-
-	<footer></footer>
+		<section id="userLogin">
+			<p id="formTitle">Login</p>
+			<form action="#" id="user-input">
+			  <div class="mdl-textfield mdl-js-textfield textfield-demo">
+			    <input class="mdl-textfield__input" type="text" id="username" />
+			    <label class="mdl-textfield__label" for="username">Username</label>
+			  </div>
+			  <div class="mdl-textfield mdl-js-textfield textfield-demo">
+			    <input class="mdl-textfield__input" type="text" id="pass" />
+			    <label class="mdl-textfield__label" for="pass">Password</label>
+			  </div>
+			  <button id="login">Login</button>
+			    <p id="sub">Not a User? Create an Account!</p>
+			    <button id="register">Register</button>
+</form>
+	  </section>
+	<footer>
+			<img class="social" src="img/fi-social-facebook.svg">
+			<img class="social" src="img/fi-social-github.svg">
+			<img class="social" src="img/fi-social-twitter.svg">
+		</ul>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/form.js"></script>
 </body>
 </html>
