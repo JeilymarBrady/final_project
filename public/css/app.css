@@ -136,4 +136,27 @@ footer {
     margin-bottom: 20px;
     border: 3px solid orange; }
 
+/* GAME TIME */
+#board {
+  background: steelblue;
+  width: 650px;
+  height: 540px;
+  padding: 24px;
+  margin: 0px auto;
+  text-align: center; }
+
+#board > img {
+  background-color: none;
+  size: 100% 100%;
+  position: center;
+  border: white 1px solid;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px;
+  padding: 2px;
+  font-size: 64px;
+  cursor: pointer;
+  text-align: center; }
+
 /*# sourceMappingURL=app.css.map */
