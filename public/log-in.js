@@ -1,7 +1,7 @@
 var Users = function(userName, passWord, score) {
   this.userName = userName;
   this.passWord = passWord;
-  this.score;
+  this.score = 0;
 };
 
 var userAry = [];
@@ -67,17 +67,19 @@ var saveLocalData = function() {
 var userScore = [];
 var getUserScore = function(userAry) {
   for (var i = 0; i < userAry.length; i++) {
+    // debugger;
     userScore.push(userAry[i].score);
   }
   userScore.sort(function(a, b) {
       return a - b;
     }
   );
+  console.log(userScore);
   return userScore;
 };
-// getUserScore(userAry);
-// console.log(userScore);
-// console.dir(userScore[3]);
+
+console.log(userScore);
+console.dir(userScore[3]);
 
 var renderScore = function() {
   getUserScore(userAry);
@@ -95,9 +97,7 @@ var renderScore = function() {
       }
   console.log(addRow);
 };
-renderScore();
-console.log(userScore);
-console.dir(userScore[3]);
+
 if(!(localStorage.getItem("userAry"))){
   saveLocalData();
 } else {
@@ -106,3 +106,8 @@ if(!(localStorage.getItem("userAry"))){
     userAry[i] = newArray[i];
   }
 };
+
+getUserScore(userAry);
+renderScore();
+console.dir(userScore[0]);
+console.log(userAry);
