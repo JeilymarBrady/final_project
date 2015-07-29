@@ -92,9 +92,6 @@ footer {
 	p {
 		@include subtitles(steelblue);
 	}
-	button {
-		@include button(#3370FF);
-	}
 }
 #userLogin {
 	background-color: white;

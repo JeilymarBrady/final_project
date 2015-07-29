@@ -69,16 +69,6 @@ footer {
     font-family: 'Montserrat', Arial, sans-serif;
     text-transform: capitalize;
     color: steelblue; }
-  #hero button {
-    background-color: #3370FF;
-    border: 1px solid rgba(51, 112, 255, 0.05);
-    border-radius: 5px;
-    padding: .25em 1em;
-    color: white;
-    box-shadow: 0 3px 0 #003dcc; }
-    #hero button:hover {
-      cursor: pointer;
-      background-color: #8590ea; }
 
 #userLogin {
   background-color: white;
