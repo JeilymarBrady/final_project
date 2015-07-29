@@ -16,6 +16,75 @@ $(document).ready(function() {
     console.log(err);
   });
 
+  ///USERS
+  var Users = function(userName, passWord, score) {
+    this.userName = userName;
+    this.passWord = passWord;
+    this.score = [];
+    this.loggedIn = true;
+  };
+
+  var userAry = [];
+
+  var createNewUser = document.getElementById('user-input');
+  createNewUser.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var userName = createNewUser.elements[0].value;
+    var passWord = createNewUser.elements[1].value;
+    if (!(userName && passWord)) {
+      return;
+    } else {
+        if (!(checkForDoubles(userName, userAry))) {
+        userAry.push(new Users(userName, passWord, 0));
+        saveLocalData();
+        }
+    }
+    createNewUser.elements[0].value = '';
+    createNewUser.elements[1].value = '';
+  });
+
+  function checkForDoubles(userName, userAry) {
+    for (var i = 0; i < userAry.length; i++) {
+      userAry[i].loggedIn = false;
+      if (userName == userAry[i].userName) return true;
+      }
+    return false;
+  }
+
+  function checkForPassword(passWord, userAry) {
+    for (var i = 0; i < userAry.length; i++) {
+      userAry[i].loggedIn = false;
+      if (passWord == userAry[i].passWord){
+        userAry[i].loggedIn = true;
+       return true;
+      }
+    }
+    return false;
+  }
+
+  var logIn = document.getElementById('user-input-login');
+  logIn.addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log('listen');
+    var userName = logIn.elements[0].value;
+    var passWord = logIn.elements[1].value;
+    if (!(userName && passWord)) {
+      return;
+    } else {
+      if(checkForDoubles(userName, userAry)){
+        if(checkForPassword(passWord, userAry)) {
+        console.log('logInStatus');
+        } else {
+        alert("Wrong PassWord or User name");
+        }
+      } else {
+        alert("Wrong PassWord or User name");
+      }
+    }
+    logIn.elements[0].value = '';
+    logIn.elements[1].value = '';
+  });
+
   var Picture = function(path){
     this.flipped = false;
     this.img = document.createElement('img');
@@ -75,7 +144,11 @@ $(document).ready(function() {
           flipped+=2;
           values = [];
           if(flipped === cards_array.length){
-            alert("A new game has been started! You used " + clicks + " clicks to find all of the pairs.");
+            alert("You won! You used " + clicks + " clicks to find all of the pairs.");
+            updateScore(clicks);
+            saveLocalData();
+            flipped = 0;
+            clicks = 0;
             document.getElementById('board').innerHTML = '';
             pullFromImgur();
           }
@@ -86,11 +159,57 @@ $(document).ready(function() {
 
   }
 
+  function updateScore(click){
+    var totalClicks = click;
+    for(var i = 0; i < userAry.length; i++){
+      if(userAry[i].loggedIn){
+        userAry[i].score.push(totalClicks);
+        userAry[i].score.sort(function(a, b){
+          return a - b;
+        });
+      }
+    }
+    renderScore();
+  }
+
   function flip(){
     for (var i = 0; i < values.length; i++) {
       values[i].src = values[i].logo;
       values[i].visited = false;
     }
     values = [];
+  }
+
+  ///LOCAL DATA
+  var saveLocalData = function() {
+    localStorage.setItem("userAry", JSON.stringify(userAry));
+    console.log('hello from save local data');
+  };
+
+  var renderScore = function() {
+    var main = document.getElementById('score-board');
+    var addRow = document.createElement('tr');
+    var addUser = document.createElement('th');
+
+
+    for (var i = 0; i < userAry.length; i++) {
+      if(userAry[i].loggedIn){
+        addUser.innerHTML = userAry[0].userName;
+        addRow.appendChild(addUser);
+        var addScore = document.createElement('td');
+        addScore.innerHTML = userAry[i].score;
+        addRow.appendChild(addScore);
+        main.appendChild(addRow);
+      }
+    }
+  };
+
+  if(!(localStorage.getItem("userAry"))){
+    saveLocalData();
+  } else {
+    userAry = JSON.parse(localStorage.getItem('userAry'));
+    for(var i = 0; i < userAry.length; i++){
+      userAry[i].loggedIn = false;
+    }
   }
 });
