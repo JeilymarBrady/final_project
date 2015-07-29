@@ -93,6 +93,16 @@ footer {
 		@include subtitles(steelblue);
 	}
 }
+#main {
+	background-color: #F2F2F2;
+	max-height: 600px;
+	position: relative;
+	text-align: center;
+	form {
+		display: inline-block;
+		vertical-align: text-top;
+	}
+}
 #userLogin {
 	background-color: white;
 	height: 400px;
@@ -112,5 +122,22 @@ footer {
 			margin: 1em auto;
 		}
 	}
+}*/
+
+/* ABOUT US */
+#main-about {
+	position: relative;
+	width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
 }
 
+.us {
+	width: 25%;
+	display: inline-block;
+	img {
+		border-radius: 150px;
+		width: 150px;
+	}
+}
