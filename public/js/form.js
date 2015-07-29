@@ -11,4 +11,8 @@ $(document).ready(function() {
 		$('#pass').attr('id', 'newpass');
 		$('#pass').next().attr('for', 'newpass');
 	});
+	$('#login').click(function(evt) {
+		evt.preventDefault();
+		console.log('Collect user information.')
+	});
 });
