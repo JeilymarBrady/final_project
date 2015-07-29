@@ -10,106 +10,91 @@ $(document).ready(function() {
   .done(function(res) {
     pics = res.data.images;
     //Pushes picture links from pics to cards_array
-    var Pics = function(path){
+    var Picture = function(path){
       this.path = path;
+      this.flipped = false;
+      // this.clicks;
+      this.img = document.createElement('img');
+      this.img.src = this.path;
+      this.front = document.createElement('div');
+      this.front.src = 'logo.png';
+      this.render = function(){
+        var container = document.getElementById('board');
+        container.appendChild(this.front);
+      };
+      // $('container').on('click', this.flipPicture);
     };
     var cards_array = [];
     function pullFromImgur() {
       for(var i = 0; i < 2; i++){
         for(var j = 0; j < pics.length; j++){
-           cards_array.push(new Pics(pics[j].link));
+          cards_array.push(new Picture(pics[j].link));
+          if(i<10){
+            cards_array[j].render();
+          } else {
+            cards_array[j+10].render();
+          }
         }
-        console.dir(cards_array);
       }
     }
     pullFromImgur();
-//     var cards_array = [];
-// for(var i = 0; i < 2; i++){
-//   cards_array.push(new Pics('./js/bunch/alice.png'));
-//   cards_array.push('./js/bunch/bobby.png');
-//   cards_array.push('./js/bunch/carol.png');
-//   cards_array.push('./js/bunch/cindy.png');
-//   cards_array.push('./js/bunch/greg.png');
-//   cards_array.push('./js/bunch/jan.png');
-//   cards_array.push('./js/bunch/marcia.png');
-//   cards_array.push('./js/bunch/mike.png');
-//   cards_array.push('./js/bunch/peter.png');
-//   cards_array.push('./js/bunch/tiger.png');
-// }
-// console.dir(cards_array);
-//game code
-// var cards_array = ['A', 'A', 'B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
-  var values = [];
-  var ids = [];
-  var flipped = 0;
-  var clicks = 0;
-  Array.prototype.shuffle = function() {
-    var i = this.length, j, temp;
-    while(--i> 0){
-      j = Math.floor(Math.random() * (i+1));
-      temp = this[j];
-      this[j] = this[i];
-      this[i] = temp;
-    }
-  };
-
-
-
-function newBoard(){
-  //console.log("clicks done: " + clicks);
-  clicks = 0;
-  flipped = 0;
-  var msg = '';
-  cards_array.shuffle();
-  for(var i = 0; i < cards_array.length; i++){
-    //msg += '<div id="tile_'+i+'" onclick="flipTile(this,\''+cards_array[i].path +'\')"></div>';
-    msg += '<div id="tile_'+i+'" onclick="flipTile()"></div>';
-  }
-  document.getElementById('board').innerHTML = msg;
-}
-//window.addEventListener for load of game (newBoard());
-  function flipTile(tile, val){
-    if(tile.innerHTML === "" && values.length < 2){
-      tile.style.background = '#FFF'; //not needed with image
-      tile.innerHTML = '<img src=\'' + cards_array[0].path + '\'/>';//change val to img
-      if(values.length === 0 ){
-        values.push(val);
-        ids.push(tile.id);
-        clicks++;
-      } else if(values.length === 1){
-        values.push(val);
-        ids.push(tile.id);
-        clicks++;
-        if(values[0] === values[1]){
-          flipped += 2;
-          values = [];
-          ids = [];
-          if(flipped === cards_array.length){ //game is over, user won
-            document.getElementById('board').innerHTML = "";
-            newBoard();//create new board
-          } else {
-            function flip(){
-              var card_1 = document.getElementById(ids[0]);
-              var card_2 = document.getElementById(ids[1]);
-              card_1.style.background = 'url(logo.png) no-repeat';
-              card_2.style.background = 'url(logo.png) no-repeat';
-              card_1.style.backgroundSize = 'cover';
-              card_2.style.backgroundSize = 'cover';
-              card_1.style.backgroundPosition = 'center';
-              card_2.style.backgroundPosition = 'center';
-              card_1.innerHTML = '';
-              card_2.innerHTML = '';
-              values = [];
-              ids = [];
-            }//http://imgur.com/lA0KNNt
-          }
-        }
-        setTimeout(flip, 100);
+    // $('board').on('click', flipPicture);
+    /////////////////////////////////////////////////////////////////////
+    var contain = document.getElementById('board').childNodes;
+    console.log(contain);
+    contain[contain.length -1].addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log('yo');
+    }, false);
+    /////////////////////////////////////////////////////////////////////
+    var values = [];
+    var ids = [];
+    var flipped = 0;
+    var clicks = 0;
+    Array.prototype.shuffle = function() {
+      var i = this.length, j, temp;
+      while(--i> 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
       }
+    };
+    cards_array.shuffle();
+
+    //window.addEventListener for load of game (newBoard());
+    function flipPicture(){
+      console.log("fliptile");
+
+    // if(tile.innerHTML === "" && values.length < 2){
+    //     tile.style.background = '#FFF'; //not needed with image
+    //     tile.innerHTML = '<img src=\'' + cards_array[0].path + '\'/>';//change val to img
+    //     if(values.length === 0 ){
+    //       values.push(val);
+    //       ids.push(tile.id);
+    //       clicks++;
+    //     } else if(values.length == 1){
+    //       values.push(val);
+    //       ids.push(tile.id);
+    //       clicks++;
+    //       if(values[0] === values[1]){
+    //         flipped += 2;
+    //         values = [];
+    //         ids = [];
+    //         if(flipped == cards_array.length){ //game is over, user won
+    //           document.getElementById('board').innerHTML = "";
+    //           newBoard();//create new board
+    //         } else {
+    //             console.log('flip');
+    //             values = [];
+    //             ids = [];
+    //         }
+    //       }
+    //       setTimeout(flip, 100);
+    //     }
+    //   }
     }
-  }
-  newBoard();
-  })
+})
   .fail(function(err) {
     console.log(err);
   });
