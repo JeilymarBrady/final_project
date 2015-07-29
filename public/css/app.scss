@@ -106,11 +106,19 @@ footer {
 }*/
 
 /* ABOUT US */
-#jeily, #jose, #stuart, #emily {
+#main-about {
+	position: relative;
+	width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.us {
+	width: 25%;
+	display: inline-block;
 	img {
 		border-radius: 150px;
 		width: 150px;
-		border: 0;
-		display: inline;
 	}
 }

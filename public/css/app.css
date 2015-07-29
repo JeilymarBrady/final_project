@@ -88,10 +88,18 @@ footer {
 	}
 }*/
 /* ABOUT US */
-#jeily img, #jose img, #stuart img, #emily img {
-  border-radius: 150px;
-  width: 150px;
-  border: 0;
-  display: inline; }
+#main-about {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center; }
+
+.us {
+  width: 25%;
+  display: inline-block; }
+  .us img {
+    border-radius: 150px;
+    width: 150px; }
 
 /*# sourceMappingURL=app.css.map */
