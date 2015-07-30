@@ -169,6 +169,45 @@ footer {
 	}
 }
 
+/*SCORES*/
+#user-input-login, #user-input{
+	display: none;
+}
+
+#score-board {
+	top: 370px;
+	left: 20px;
+	position: relative;
+	z-index: 1;
+	font-size: 1.3em;
+	width:30%;
+	margin-left:35%;
+	margin-right:15%;
+
+	tr {
+		th {
+			font-family: Sans-Serif;
+			color: red;
+		}
+		td {
+			color: white;
+		}
+	}
+}
+
+
+#tableWrap {
+	position: absolute;
+	// top:-200px;
+	height: 600px;
+	img {
+		// position: absolute;
+		// z-index: -1;
+		margin: 0 auto;
+		height: 120%;
+		display: block;
+	}
+
 
 /*GameTime*/
 #user-input, #user-input-login{
@@ -210,4 +249,5 @@ div#board > img{
   padding: 2px;
   cursor: pointer;
   text-align: center;
+}
 }

@@ -154,43 +154,65 @@ footer {
     margin-bottom: 20px;
     border: 3px solid orange; }
 
-/*GameTime*/
-#user-input, #user-input-login {
+/*SCORES*/
+#user-input-login, #user-input {
   display: none; }
 
-/*take out on merge*/
-#boardContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  /*vertical-align: center;*/
-  margin-bottom: 2em; }
+#score-board {
+  top: 370px;
+  left: 20px;
+  position: relative;
+  z-index: 1;
+  font-size: 1.3em;
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 15%; }
+  #score-board tr th {
+    font-family: Sans-Serif;
+    color: red; }
+  #score-board tr td {
+    color: white; }
 
-#gameHeader {
-  color: #FFD776;
-  text-align: center;
-  font-family: 'Droid Sans', sans-serif; }
-
-div#board {
-  background: black;
-  border: #999 1px solid;
-  border-radius: 2%;
-  width: 650px;
-  height: 540px;
-  padding: 24px;
-  margin: 0px auto; }
-
-div#board > img {
-  border-radius: 5%;
-  background-color: none;
-  size: 100% 100%;
-  position: center;
-  width: 100px;
-  height: 100px;
-  float: left;
-  margin: 10px;
-  padding: 2px;
-  cursor: pointer;
-  text-align: center; }
+#tableWrap {
+  position: absolute;
+  height: 600px;
+  /*GameTime*/
+  /*take out on merge*/ }
+  #tableWrap img {
+    margin: 0 auto;
+    height: 120%;
+    display: block; }
+  #tableWrap #user-input, #tableWrap #user-input-login {
+    display: none; }
+  #tableWrap #boardContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /*vertical-align: center;*/
+    margin-bottom: 2em; }
+  #tableWrap #gameHeader {
+    color: #FFD776;
+    text-align: center;
+    font-family: 'Droid Sans', sans-serif; }
+  #tableWrap div#board {
+    background: black;
+    border: #999 1px solid;
+    border-radius: 2%;
+    width: 650px;
+    height: 540px;
+    padding: 24px;
+    margin: 0px auto; }
+  #tableWrap div#board > img {
+    border-radius: 5%;
+    background-color: none;
+    size: 100% 100%;
+    position: center;
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 10px;
+    padding: 2px;
+    cursor: pointer;
+    text-align: center; }
 
 /*# sourceMappingURL=app.css.map */
