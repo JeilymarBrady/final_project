@@ -69,7 +69,7 @@ footer {
 #hero {
   background-image: url(http://i.huffpost.com/gen/2077870/images/o-THE-BRADY-BUNCH-CAST-facebook.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: top;
   width: 100%;
   height: 500px;
   color: steelblue;
@@ -135,5 +135,45 @@ footer {
     width: 150px;
     margin-bottom: 20px;
     border: 3px solid orange; }
+
+/*GameTime*/
+#user-input, #user-input-login {
+  display: none; }
+
+#boardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /*vertical-align: center;*/
+  margin-bottom: 2em; }
+
+#gameHeader {
+  color: #FFD776;
+  text-align: center;
+  font-family: 'Droid Sans', sans-serif; }
+
+div#board {
+  background: black;
+  border: #999 1px solid;
+  border-radius: 2%;
+  width: 650px;
+  height: 540px;
+  padding: 24px;
+  margin: 0px auto; }
+
+div#board > img {
+  border-radius: 5%;
+  background-color: none;
+  size: 100% 100%;
+  position: center;
+  /*border: #CF4A30 1px solid;*/
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px;
+  padding: 2px;
+  font-size: 64px;
+  cursor: pointer;
+  text-align: center; }
 
 /*# sourceMappingURL=app.css.map */
