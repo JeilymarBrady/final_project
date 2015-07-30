@@ -26,23 +26,46 @@ $(document).ready(function() {
 
   var userAry = [];
 
-  var createNewUser = document.getElementById('user-input');
-  createNewUser.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var userName = createNewUser.elements[0].value;
-    var passWord = createNewUser.elements[1].value;
-    if (!(userName && passWord)) {
-      return;
-    } else {
-        if (!(checkForDoubles(userName, userAry))) {
-        userAry.push(new Users(userName, passWord, 0));
-        saveLocalData();
+  if(document.getElementById('user-input')){
+    var createNewUser = document.getElementById('user-input');
+    createNewUser.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var userName = createNewUser.elements[0].value;
+      var passWord = createNewUser.elements[1].value;
+      if (!(userName && passWord)) {
+        return;
+      } else {
+          if (!(checkForDoubles(userName, userAry))) {
+          userAry.push(new Users(userName, passWord, 0));
+          saveLocalData();
+          }
+      }
+      createNewUser.elements[0].value = '';
+      createNewUser.elements[1].value = '';
+    });
+    var logIn = document.getElementById('user-input-login');
+    logIn.addEventListener('submit', function(e) {
+      e.preventDefault();
+      console.log('listen');
+      var userName = logIn.elements[0].value;
+      var passWord = logIn.elements[1].value;
+      if (!(userName && passWord)) {
+        return;
+      } else {
+        if(checkForDoubles(userName, userAry)){
+          if(checkForPassword(passWord, userAry)) {
+          console.log('logInStatus');
+          } else {
+          alert("Wrong PassWord or User name");
+          }
+        } else {
+          alert("Wrong PassWord or User name");
         }
-    }
-    createNewUser.elements[0].value = '';
-    createNewUser.elements[1].value = '';
-  });
-
+      }
+      logIn.elements[0].value = '';
+      logIn.elements[1].value = '';
+    });
+  }
   function checkForDoubles(userName, userAry) {
     for (var i = 0; i < userAry.length; i++) {
       userAry[i].loggedIn = false;
@@ -61,29 +84,6 @@ $(document).ready(function() {
     }
     return false;
   }
-
-  var logIn = document.getElementById('user-input-login');
-  logIn.addEventListener('submit', function(e) {
-    e.preventDefault();
-    console.log('listen');
-    var userName = logIn.elements[0].value;
-    var passWord = logIn.elements[1].value;
-    if (!(userName && passWord)) {
-      return;
-    } else {
-      if(checkForDoubles(userName, userAry)){
-        if(checkForPassword(passWord, userAry)) {
-        console.log('logInStatus');
-        } else {
-        alert("Wrong PassWord or User name");
-        }
-      } else {
-        alert("Wrong PassWord or User name");
-      }
-    }
-    logIn.elements[0].value = '';
-    logIn.elements[1].value = '';
-  });
 
   var Picture = function(path){
     this.flipped = false;

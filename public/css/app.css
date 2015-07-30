@@ -24,6 +24,7 @@ button {
   color: white; }
 
 nav {
+  z-index: 100;
   background-color: #F3F3F3;
   padding-top: 0; }
   nav ul {
@@ -39,6 +40,12 @@ nav {
       border-left: 1px solid #8d8d8d; }
       nav ul li:hover {
         background-color: white; }
+
+.rowGame {
+  margin-top: -25px; }
+
+.rowScore {
+  position: absolute; }
 
 #brady {
   background-color: steelblue;
@@ -119,7 +126,7 @@ footer {
     display: block; }
     #userLogin button:hover {
       cursor: pointer;
-      background-color: #909abd; }
+      background-color: #909bbd; }
   #userLogin #user-input, #userLogin #user-input-login {
     display: block;
     position: relative;
@@ -136,9 +143,12 @@ footer {
       margin: 1em auto; }
       #userLogin #user-input button:hover, #userLogin #user-input-login button:hover {
         cursor: pointer;
-        background-color: #909abd; }
+        background-color: #909bbd; }
 
 /* ABOUT US */
+#HeaderAbout {
+  color: darkorange; }
+
 .us {
   width: 25%;
   display: inline-block;
@@ -174,34 +184,36 @@ footer {
     color: white; }
 
 #tableWrap {
-  margin-top: -130px;
+  margin-top: -150px;
   background: url(img/jose-tv.svg);
   position: relative;
+  /*	// top:-200px;*/
   height: 550px; }
   #tableWrap img {
+    /*		// position: absolute;
+    		// z-index: -1;
+    */
     margin: 0 auto;
     height: 120%;
     display: block;
     bottom: 0px; }
 
 #score-footer {
-  margin-top: 130px;
+  margin-top: 150px;
   z-index: -1; }
 
 #main-score {
   background-color: #FFD776;
   max-height: 600px;
+  margin-top: 53px;
   position: relative;
   text-align: center; }
 
 #score-header {
   background: #FFD776; }
 
+/*}*/
 /*GameTime*/
-#user-input, #user-input-login {
-  display: none; }
-
-/*take out on merge*/
 #boardContainer {
   width: 100%;
   display: flex;
@@ -214,7 +226,7 @@ footer {
   text-align: center;
   font-family: 'Droid Sans', sans-serif; }
 
-div#board {
+#board {
   background: black;
   border: #999 1px solid;
   border-radius: 2%;
@@ -223,7 +235,7 @@ div#board {
   padding: 24px;
   margin: 0px auto; }
 
-div#board > img {
+#board > img {
   border-radius: 5%;
   background-color: none;
   size: 100% 100%;
