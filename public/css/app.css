@@ -154,27 +154,35 @@ footer {
     margin-bottom: 20px;
     border: 3px solid orange; }
 
-/* GAME TIME */
-#board {
-  background: steelblue;
-  width: 650px;
-  height: 540px;
-  padding: 24px;
-  margin: 0px auto;
-  text-align: center; }
+/*GameTime*/
+#user-input, #user-input-login {
+  display: none; }
 
-#board > img {
+/*take out on merge*/
+#boardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /*vertical-align: center;*/
+  margin-bottom: 2em; }
+
+#gameHeader {
+  color: #FFD776;
+  text-align: center;
+  font-family: 'Droid Sans', sans-serif; }
+
+div#board {
+  background: black;
+  border: #999 1px solid;
+  border-radius: 2%; }
+
+/* GAME TIME */
+div#board > img {
+  border-radius: 5%;
   background-color: none;
   size: 100% 100%;
   position: center;
-  border: white 1px solid;
-  width: 100px;
-  height: 100px;
-  float: left;
-  margin: 10px;
-  padding: 2px;
-  font-size: 64px;
-  cursor: pointer;
+  /*border: #CF4A30 1px solid;*/
   text-align: center; }
 
 /*# sourceMappingURL=app.css.map */
