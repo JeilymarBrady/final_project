@@ -3,16 +3,14 @@ $(document).ready(function() {
 		evt.preventDefault();
 		$('#login').fadeOut('slow');
 		$('#sub').fadeOut('slow');
+		$('#user-input').attr('id', 'user-input-login');
 		$('#formTitle').fadeOut('slow', function() {
 			$(this).replaceWith('<p id="formTitle">Register</p>');
 		});
-		$('#username').attr('id', 'newuser');
-		$('#username').next().attr('for', 'newuser');
-		$('#pass').attr('id', 'newpass');
-		$('#pass').next().attr('for', 'newpass');
 	});
 	$('#login').click(function(evt) {
 		evt.preventDefault();
 		console.log('Collect user information.')
 	});
+	$('#register').replaceWith('<button id="submit">Login</button>');
 });
