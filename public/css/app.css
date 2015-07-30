@@ -118,7 +118,7 @@ footer {
       margin: 1em auto; }
       #userLogin #user-input button:hover {
         cursor: pointer;
-        background-color: #909bbd; }
+        background-color: #909abd; }
 
 /* ABOUT US */
 .us {
@@ -135,5 +135,31 @@ footer {
     width: 150px;
     margin-bottom: 20px;
     border: 3px solid orange; }
+
+#user-input-login, #user-input {
+  display: none; }
+
+#score-board {
+  top: 370px;
+  left: 20px;
+  position: relative;
+  z-index: 1;
+  font-size: 1.3em;
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 15%; }
+  #score-board tr th {
+    font-family: Sans-Serif;
+    color: red; }
+  #score-board tr td {
+    color: white; }
+
+#tableWrap {
+  position: absolute;
+  height: 600px; }
+  #tableWrap img {
+    margin: 0 auto;
+    height: 120%;
+    display: block; }
 
 /*# sourceMappingURL=app.css.map */

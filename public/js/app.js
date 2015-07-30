@@ -189,7 +189,7 @@ $(document).ready(function() {
   var renderScore = function() {
     var main = document.getElementById('score-board');
     var addRow = document.createElement('tr');
-    var addUser = document.createElement('th');
+    var addUser = document.createElement('td');
 
 
     for (var i = 0; i < userAry.length; i++) {
@@ -208,6 +208,7 @@ $(document).ready(function() {
     saveLocalData();
   } else {
     userAry = JSON.parse(localStorage.getItem('userAry'));
+    renderScore();
     for(var i = 0; i < userAry.length; i++){
       userAry[i].loggedIn = false;
     }
