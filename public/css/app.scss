@@ -12,7 +12,7 @@
 	}
 }
 @mixin titles($title) {
-	font-family: 'Montserrat', Arial, sans-serif;
+	font-family: 'Lato', Arial, sans-serif;
 	text-transform: uppercase;
 	color: $title;
 }
@@ -72,8 +72,9 @@ nav {
 }
 footer {
 	background-color: #FFD776;
-	height: 200px;
+	height: 150px;
 	bottom: 0;
+	margin-bottom: -500px;
 }
 #container {
 	text-align: center;
@@ -92,21 +93,26 @@ footer {
 
 /* HOME PAGE */
 #hero {
-	background-image: url(http://i.huffpost.com/gen/2077870/images/o-THE-BRADY-BUNCH-CAST-facebook.jpg);
+	background-image: url(http://i.huffpost.com/gen/1663671/images/o-BRADY-BUNCH-facebook.jpg);
+	-webkit-transform: scaleX(-1);
+	filter: FlipH;
 	background-size: cover;
-	background-position: center;
+	background-position: top;
 	width: 100%;
-	height: 500px;
+	height: 600px;
 	color: steelblue;
-	text-align: center;
+	text-align: left;
 	font: 30px Georgia, sans-serif;
+	position: relative;
 	h1 {
 		@include titles(steelblue);
-		text-shadow: 3px 3px 1px blue;
-	}
-	p {
-		@include subtitles(orange);
-		font-size: 0.75em;
+		-webkit-transform: scaleX(-1);
+		filter: FlipH;
+		text-shadow: 3px 3px lightblue;
+		top: 0;
+		right: 1em;
+		position: absolute;
+		padding-bottom: 1.5em;
 	}
 }
 #main {
@@ -127,7 +133,13 @@ footer {
 		text-align: center;
 		padding-top: 2em;
 	}
-	#user-input {
+	button {
+		@include button(steelblue);
+		margin: 1em auto;
+		text-align: center;
+		display: block;
+	}
+	#user-input, #user-input-login {
 		display: block;
 		position: relative;
 		margin: 0 auto;
@@ -157,6 +169,7 @@ footer {
 	}
 }
 
+/*SCORES*/
 #user-input-login, #user-input{
 	display: none;
 }
@@ -194,4 +207,47 @@ footer {
 		height: 120%;
 		display: block;
 	}
+
+
+/*GameTime*/
+#user-input, #user-input-login{
+	display: none;
+} /*take out on merge*/
+#boardContainer{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	/*vertical-align: center;*/
+	margin-bottom: 2em;
+}
+
+#gameHeader{
+	color: #FFD776;
+	text-align: center;
+	font-family: 'Droid Sans', sans-serif;
+}
+
+div#board{
+  background: black;
+  border:#999 1px solid;
+  border-radius: 2%;
+  width: 650px;
+  height: 540px;
+  padding: 24px;
+  margin: 0px auto;
+}
+
+div#board > img{
+	border-radius: 5%;
+  background-color: none;
+  size: 100% 100%;
+  position: center;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px;
+  padding: 2px;
+  cursor: pointer;
+  text-align: center;
+}
 }
