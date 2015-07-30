@@ -14,7 +14,7 @@ nav, div, footer {
   width: 100%; }
 
 h1, h2, h3, h4 {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
   text-transform: uppercase;
   color: white; }
 
@@ -49,8 +49,9 @@ nav {
 
 footer {
   background-color: #FFD776;
-  height: 200px;
-  bottom: 0; }
+  height: 150px;
+  bottom: 0;
+  margin-bottom: -500px; }
 
 #container {
   text-align: center;
@@ -67,24 +68,28 @@ footer {
 
 /* HOME PAGE */
 #hero {
-  background-image: url(http://i.huffpost.com/gen/2077870/images/o-THE-BRADY-BUNCH-CAST-facebook.jpg);
+  background-image: url(http://i.huffpost.com/gen/1663671/images/o-BRADY-BUNCH-facebook.jpg);
+  -webkit-transform: scaleX(-1);
+  filter: FlipH;
   background-size: cover;
   background-position: top;
   width: 100%;
-  height: 500px;
+  height: 600px;
   color: steelblue;
-  text-align: center;
-  font: 30px Georgia, sans-serif; }
+  text-align: left;
+  font: 30px Georgia, sans-serif;
+  position: relative; }
   #hero h1 {
-    font-family: 'Montserrat', Arial, sans-serif;
+    font-family: 'Lato', Arial, sans-serif;
     text-transform: uppercase;
     color: steelblue;
-    text-shadow: 3px 3px 1px blue; }
-  #hero p {
-    font-family: 'Montserrat', Arial, sans-serif;
-    text-transform: capitalize;
-    color: orange;
-    font-size: 0.75em; }
+    -webkit-transform: scaleX(-1);
+    filter: FlipH;
+    text-shadow: 3px 3px lightblue;
+    top: 0;
+    right: 1em;
+    position: absolute;
+    padding-bottom: 1.5em; }
 
 #main {
   background-color: #F2F2F2;
@@ -102,13 +107,26 @@ footer {
   #userLogin p {
     text-align: center;
     padding-top: 2em; }
-  #userLogin #user-input {
+  #userLogin button {
+    background-color: steelblue;
+    border: 1px solid rgba(70, 130, 180, 0.05);
+    border-radius: 5px;
+    padding: .25em 1em;
+    color: white;
+    box-shadow: 0 3px 0 #294d6b;
+    margin: 1em auto;
+    text-align: center;
+    display: block; }
+    #userLogin button:hover {
+      cursor: pointer;
+      background-color: #909bbd; }
+  #userLogin #user-input, #userLogin #user-input-login {
     display: block;
     position: relative;
     margin: 0 auto;
     width: 20%;
     text-align: center; }
-    #userLogin #user-input button {
+    #userLogin #user-input button, #userLogin #user-input-login button {
       background-color: steelblue;
       border: 1px solid rgba(70, 130, 180, 0.05);
       border-radius: 5px;
@@ -116,7 +134,7 @@ footer {
       color: white;
       box-shadow: 0 3px 0 #294d6b;
       margin: 1em auto; }
-      #userLogin #user-input button:hover {
+      #userLogin #user-input button:hover, #userLogin #user-input-login button:hover {
         cursor: pointer;
         background-color: #909bbd; }
 
@@ -140,6 +158,7 @@ footer {
 #user-input, #user-input-login {
   display: none; }
 
+/*take out on merge*/
 #boardContainer {
   width: 100%;
   display: flex;
@@ -155,25 +174,15 @@ footer {
 div#board {
   background: black;
   border: #999 1px solid;
-  border-radius: 2%;
-  width: 650px;
-  height: 540px;
-  padding: 24px;
-  margin: 0px auto; }
+  border-radius: 2%; }
 
+/* GAME TIME */
 div#board > img {
   border-radius: 5%;
   background-color: none;
   size: 100% 100%;
   position: center;
   /*border: #CF4A30 1px solid;*/
-  width: 100px;
-  height: 100px;
-  float: left;
-  margin: 10px;
-  padding: 2px;
-  font-size: 64px;
-  cursor: pointer;
   text-align: center; }
 
 /*# sourceMappingURL=app.css.map */
