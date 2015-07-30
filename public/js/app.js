@@ -182,7 +182,6 @@ $(document).ready(function() {
       }
     }
     saveLocalData();
-    renderScore();
   }
 
   function flip(){
@@ -221,6 +220,6 @@ $(document).ready(function() {
     saveLocalData();
   } else {
     userAry = JSON.parse(localStorage.getItem('userAry'));
-    //renderScore();
+    renderScore();
   }
 });
