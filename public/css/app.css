@@ -174,15 +174,23 @@ footer {
 div#board {
   background: black;
   border: #999 1px solid;
-  border-radius: 2%; }
+  border-radius: 2%;
+  width: 650px;
+  height: 540px;
+  padding: 24px;
+  margin: 0px auto; }
 
-/* GAME TIME */
 div#board > img {
   border-radius: 5%;
   background-color: none;
   size: 100% 100%;
   position: center;
-  /*border: #CF4A30 1px solid;*/
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px;
+  padding: 2px;
+  cursor: pointer;
   text-align: center; }
 
 /*# sourceMappingURL=app.css.map */
