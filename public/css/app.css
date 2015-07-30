@@ -40,6 +40,9 @@ nav {
       nav ul li:hover {
         background-color: white; }
 
+.rowGame {
+  margin-top: -25px; }
+
 #brady {
   background-color: steelblue;
   color: white;
@@ -175,44 +178,45 @@ footer {
 
 #tableWrap {
   position: absolute;
-  height: 600px;
-  /*GameTime*/
-  /*take out on merge*/ }
+  height: 600px; }
   #tableWrap img {
     margin: 0 auto;
     height: 120%;
     display: block; }
-  #tableWrap #user-input, #tableWrap #user-input-login {
-    display: none; }
-  #tableWrap #boardContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    /*vertical-align: center;*/
-    margin-bottom: 2em; }
-  #tableWrap #gameHeader {
-    color: #FFD776;
-    text-align: center;
-    font-family: 'Droid Sans', sans-serif; }
-  #tableWrap div#board {
-    background: black;
-    border: #999 1px solid;
-    border-radius: 2%;
-    width: 650px;
-    height: 540px;
-    padding: 24px;
-    margin: 0px auto; }
-  #tableWrap div#board > img {
-    border-radius: 5%;
-    background-color: none;
-    size: 100% 100%;
-    position: center;
-    width: 100px;
-    height: 100px;
-    float: left;
-    margin: 10px;
-    padding: 2px;
-    cursor: pointer;
-    text-align: center; }
+
+/*GameTime*/
+#boardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /*vertical-align: center;*/
+  margin-bottom: 2em; }
+
+#gameHeader {
+  color: #FFD776;
+  text-align: center;
+  font-family: 'Droid Sans', sans-serif; }
+
+#board {
+  background: black;
+  border: #999 1px solid;
+  border-radius: 2%;
+  width: 650px;
+  height: 540px;
+  padding: 24px;
+  margin: 0px auto; }
+
+#board > img {
+  border-radius: 5%;
+  background-color: none;
+  size: 100% 100%;
+  position: center;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px;
+  padding: 2px;
+  cursor: pointer;
+  text-align: center; }
 
 /*# sourceMappingURL=app.css.map */

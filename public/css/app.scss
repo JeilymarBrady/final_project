@@ -62,6 +62,9 @@ nav {
 		}
 	}
 }
+.rowGame{
+	margin-top: -25px;
+}
 #brady {
 	background-color: steelblue;
 	color: white;
@@ -207,12 +210,9 @@ footer {
 		height: 120%;
 		display: block;
 	}
-
+}
 
 /*GameTime*/
-#user-input, #user-input-login{
-	display: none;
-} /*take out on merge*/
 #boardContainer{
 	width: 100%;
 	display: flex;
@@ -227,7 +227,7 @@ footer {
 	font-family: 'Droid Sans', sans-serif;
 }
 
-div#board{
+#board{
   background: black;
   border:#999 1px solid;
   border-radius: 2%;
@@ -237,7 +237,7 @@ div#board{
   margin: 0px auto;
 }
 
-div#board > img{
+#board > img{
 	border-radius: 5%;
   background-color: none;
   size: 100% 100%;
@@ -250,4 +250,4 @@ div#board > img{
   cursor: pointer;
   text-align: center;
 }
-}
+
