@@ -27,6 +27,9 @@ $(document).ready(function() {
   var userAry = [];
 
   if(document.getElementById('user-input')){
+    var audio = new Audio('theme_song.mp3');
+    console.log('play song');
+    audio.play();
     var createNewUser = document.getElementById('user-input');
     createNewUser.addEventListener('submit', function(e) {
       e.preventDefault();
