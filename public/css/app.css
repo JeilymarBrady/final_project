@@ -1,0 +1,222 @@
+/* MIXINS */
+/* GLOBAL STYLES */
+*, *:focus {
+  box-sizing: border-box;
+  outline: 0;
+  outline: none; }
+
+p {
+  font-family: "Domine", sans-serif; }
+
+nav, div, footer {
+  float: left;
+  clear: none;
+  width: 100%; }
+
+h1, h2, h3, h4 {
+  font-family: 'Lato', Arial, sans-serif;
+  text-transform: uppercase;
+  color: white; }
+
+button {
+  font-family: 'Montserrat', Arial, sans-serif;
+  text-transform: capitalize;
+  color: white; }
+
+nav {
+  background-color: #F3F3F3;
+  padding-top: 0; }
+  nav ul {
+    margin: 0;
+    padding: 0; }
+    nav ul li {
+      float: right;
+      list-style-type: none;
+      display: inline-block;
+      padding: 15px;
+      text-decoration: none;
+      color: black;
+      border-left: 1px solid #8d8d8d; }
+      nav ul li:hover {
+        background-color: white; }
+
+.rowGame {
+  margin-top: -25px; }
+
+#brady {
+  background-color: steelblue;
+  color: white;
+  padding: 4.5px 25px; }
+  #brady:hover {
+    background-color: #a0bfda; }
+
+footer {
+  background-color: #FFD776;
+  height: 150px;
+  bottom: 0;
+  margin-bottom: -500px; }
+
+#container {
+  text-align: center;
+  position: absolute;
+  padding: 1.5em; }
+
+.social {
+  height: 30px;
+  width: auto;
+  display: inline-block;
+  margin: 1em; }
+  .social:hover {
+    cursor: pointer; }
+
+/* HOME PAGE */
+#hero {
+  background-image: url(http://i.huffpost.com/gen/1663671/images/o-BRADY-BUNCH-facebook.jpg);
+  -webkit-transform: scaleX(-1);
+  filter: FlipH;
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  height: 600px;
+  color: steelblue;
+  text-align: left;
+  font: 30px Georgia, sans-serif;
+  position: relative; }
+  #hero h1 {
+    font-family: 'Lato', Arial, sans-serif;
+    text-transform: uppercase;
+    color: steelblue;
+    -webkit-transform: scaleX(-1);
+    filter: FlipH;
+    text-shadow: 3px 3px lightblue;
+    top: 0;
+    right: 1em;
+    position: absolute;
+    padding-bottom: 1.5em; }
+
+#main {
+  background-color: #F2F2F2;
+  max-height: 600px;
+  position: relative;
+  text-align: center; }
+  #main form {
+    display: inline-block;
+    vertical-align: text-top; }
+
+#userLogin {
+  background-color: white;
+  height: 400px;
+  clear: both; }
+  #userLogin p {
+    text-align: center;
+    padding-top: 2em; }
+  #userLogin button {
+    background-color: steelblue;
+    border: 1px solid rgba(70, 130, 180, 0.05);
+    border-radius: 5px;
+    padding: .25em 1em;
+    color: white;
+    box-shadow: 0 3px 0 #294d6b;
+    margin: 1em auto;
+    text-align: center;
+    display: block; }
+    #userLogin button:hover {
+      cursor: pointer;
+      background-color: #909bbd; }
+  #userLogin #user-input, #userLogin #user-input-login {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 20%;
+    text-align: center; }
+    #userLogin #user-input button, #userLogin #user-input-login button {
+      background-color: steelblue;
+      border: 1px solid rgba(70, 130, 180, 0.05);
+      border-radius: 5px;
+      padding: .25em 1em;
+      color: white;
+      box-shadow: 0 3px 0 #294d6b;
+      margin: 1em auto; }
+      #userLogin #user-input button:hover, #userLogin #user-input-login button:hover {
+        cursor: pointer;
+        background-color: #909bbd; }
+
+/* ABOUT US */
+.us {
+  width: 25%;
+  display: inline-block;
+  margin-bottom: 5em; }
+  .us a {
+    text-decoration: none;
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-transform: capitalize;
+    color: orange; }
+  .us img {
+    border-radius: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+    border: 3px solid orange; }
+
+/*SCORES*/
+#user-input-login, #user-input {
+  display: none; }
+
+#score-board {
+  top: 370px;
+  left: 20px;
+  position: relative;
+  z-index: 1;
+  font-size: 1.3em;
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 15%; }
+  #score-board tr th {
+    font-family: Sans-Serif;
+    color: red; }
+  #score-board tr td {
+    color: white; }
+
+#tableWrap {
+  position: absolute;
+  height: 600px; }
+  #tableWrap img {
+    margin: 0 auto;
+    height: 120%;
+    display: block; }
+
+/*GameTime*/
+#boardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /*vertical-align: center;*/
+  margin-bottom: 2em; }
+
+#gameHeader {
+  color: #FFD776;
+  text-align: center;
+  font-family: 'Droid Sans', sans-serif; }
+
+#board {
+  background: black;
+  border: #999 1px solid;
+  border-radius: 2%;
+  width: 650px;
+  height: 540px;
+  padding: 24px;
+  margin: 0px auto; }
+
+#board > img {
+  border-radius: 5%;
+  background-color: none;
+  size: 100% 100%;
+  position: center;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px;
+  padding: 2px;
+  cursor: pointer;
+  text-align: center; }
+
+/*# sourceMappingURL=app.css.map */
