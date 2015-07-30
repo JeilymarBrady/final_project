@@ -197,17 +197,38 @@ footer {
 
 
 #tableWrap {
-	position: absolute;
+	margin-top: -130px;
+	background: url(img/jose-tv.svg);
+	position: relative;
 	// top:-200px;
-	height: 600px;
+	height: 550px;
 	img {
 		// position: absolute;
 		// z-index: -1;
 		margin: 0 auto;
 		height: 120%;
 		display: block;
-	}
+		bottom: 0px;
 
+		}
+}
+
+#score-footer {
+	margin-top: 130px;
+	z-index: -1;
+	// position: absolute;
+}
+
+#main-score {
+	background-color: #FFD776;
+	max-height: 600px;
+	position: relative;
+	text-align: center;
+}
+
+#score-header {
+	background: #FFD776;
+}
 
 /*GameTime*/
 #user-input, #user-input-login{
@@ -249,5 +270,4 @@ div#board > img{
   padding: 2px;
   cursor: pointer;
   text-align: center;
-}
 }

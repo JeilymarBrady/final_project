@@ -119,7 +119,7 @@ footer {
     display: block; }
     #userLogin button:hover {
       cursor: pointer;
-      background-color: #909bbd; }
+      background-color: #909abd; }
   #userLogin #user-input, #userLogin #user-input-login {
     display: block;
     position: relative;
@@ -136,7 +136,7 @@ footer {
       margin: 1em auto; }
       #userLogin #user-input button:hover, #userLogin #user-input-login button:hover {
         cursor: pointer;
-        background-color: #909bbd; }
+        background-color: #909abd; }
 
 /* ABOUT US */
 .us {
@@ -174,45 +174,66 @@ footer {
     color: white; }
 
 #tableWrap {
-  position: absolute;
-  height: 600px;
-  /*GameTime*/
-  /*take out on merge*/ }
+  margin-top: -130px;
+  background: url(img/jose-tv.svg);
+  position: relative;
+  height: 550px; }
   #tableWrap img {
     margin: 0 auto;
     height: 120%;
-    display: block; }
-  #tableWrap #user-input, #tableWrap #user-input-login {
-    display: none; }
-  #tableWrap #boardContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    /*vertical-align: center;*/
-    margin-bottom: 2em; }
-  #tableWrap #gameHeader {
-    color: #FFD776;
-    text-align: center;
-    font-family: 'Droid Sans', sans-serif; }
-  #tableWrap div#board {
-    background: black;
-    border: #999 1px solid;
-    border-radius: 2%;
-    width: 650px;
-    height: 540px;
-    padding: 24px;
-    margin: 0px auto; }
-  #tableWrap div#board > img {
-    border-radius: 5%;
-    background-color: none;
-    size: 100% 100%;
-    position: center;
-    width: 100px;
-    height: 100px;
-    float: left;
-    margin: 10px;
-    padding: 2px;
-    cursor: pointer;
-    text-align: center; }
+    display: block;
+    bottom: 0px; }
+
+#score-footer {
+  margin-top: 130px;
+  z-index: -1; }
+
+#main-score {
+  background-color: #FFD776;
+  max-height: 600px;
+  position: relative;
+  text-align: center; }
+
+#score-header {
+  background: #FFD776; }
+
+/*GameTime*/
+#user-input, #user-input-login {
+  display: none; }
+
+/*take out on merge*/
+#boardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /*vertical-align: center;*/
+  margin-bottom: 2em; }
+
+#gameHeader {
+  color: #FFD776;
+  text-align: center;
+  font-family: 'Droid Sans', sans-serif; }
+
+div#board {
+  background: black;
+  border: #999 1px solid;
+  border-radius: 2%;
+  width: 650px;
+  height: 540px;
+  padding: 24px;
+  margin: 0px auto; }
+
+div#board > img {
+  border-radius: 5%;
+  background-color: none;
+  size: 100% 100%;
+  position: center;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px;
+  padding: 2px;
+  cursor: pointer;
+  text-align: center; }
 
 /*# sourceMappingURL=app.css.map */
