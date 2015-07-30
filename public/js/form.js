@@ -1,11 +1,11 @@
 $(document).ready(function() {
-	$('#user-input-login').hide();
+	$('#user-input').hide();
 	$('#register').click(function(evt) {
 		evt.preventDefault();
-		$('#user-input').fadeOut(500);
+		$('#user-input-login').fadeOut(500);
 		$('#sub').fadeOut(500);
 		$('#register').fadeOut(500, function() {
-			$('#user-input-login').fadeIn(500);
+			$('#user-input').fadeIn(500);
 		});
 	});
 });

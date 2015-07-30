@@ -40,7 +40,7 @@ $(document).ready(function() {
           saveLocalData();
           }
       }
-      createNewUser.elements[0].value = '';
+      createNewUser.elements[0].value = 'Logged in, try playing our game!';
       createNewUser.elements[1].value = '';
     });
     var logIn = document.getElementById('user-input-login');
@@ -62,7 +62,7 @@ $(document).ready(function() {
           alert("Wrong PassWord or User name");
         }
       }
-      logIn.elements[0].value = '';
+      logIn.elements[0].value = 'Logged in, try playing our game!';
       logIn.elements[1].value = '';
     });
   }
