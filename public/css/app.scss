@@ -134,29 +134,12 @@ footer {
 }
 #userLogin {
 	background-color: white;
-	height: 400px;
+	height: 300px;
+	text-align: center;
 	clear: both;
-	p {
-		text-align: center;
-		padding-top: 2em;
-	}
-	button {
-		@include button(steelblue);
-		margin: 1em auto;
-		text-align: center;
-		display: block;
-	}
-	#user-input, #user-input-login {
-		display: block;
-		position: relative;
-		margin: 0 auto;
-		width: 20%;
-		text-align: center;
-		button {
-			@include button(steelblue);
-			margin: 1em auto;
-		}
-	}
+	vertical-align: center;
+	display: block;
+	padding-top: 2em;
 }
 
 /* ABOUT US */
@@ -180,10 +163,20 @@ footer {
 }
 
 /*SCORES*/
-#user-input-login, #user-input{
-	display: none;
+#user-input, #user-input-login {
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	padding-left: 2em;
+	padding-right: 2em;
+	margin: 0 auto;
+	width: 20%;
+	text-align: center;
+	button {
+		@include button(steelblue);
+		margin: 1em auto;
+	}
 }
-
 #score-board {
 	top: 370px;
 	left: 20px;
