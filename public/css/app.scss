@@ -121,11 +121,17 @@ footer {
 }
 #userLogin {
 	background-color: white;
-	height: 500px;
+	height: 400px;
 	clear: both;
 	p {
 		text-align: center;
 		padding-top: 2em;
+	}
+	button {
+		@include button(steelblue);
+		margin: 1em auto;
+		text-align: center;	
+		display: block;
 	}
 	#user-input, #user-input-login {
 		display: block;

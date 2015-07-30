@@ -97,11 +97,24 @@ footer {
 
 #userLogin {
   background-color: white;
-  height: 500px;
+  height: 400px;
   clear: both; }
   #userLogin p {
     text-align: center;
     padding-top: 2em; }
+  #userLogin button {
+    background-color: steelblue;
+    border: 1px solid rgba(70, 130, 180, 0.05);
+    border-radius: 5px;
+    padding: .25em 1em;
+    color: white;
+    box-shadow: 0 3px 0 #294d6b;
+    margin: 1em auto;
+    text-align: center;
+    display: block; }
+    #userLogin button:hover {
+      cursor: pointer;
+      background-color: #909bbd; }
   #userLogin #user-input, #userLogin #user-input-login {
     display: block;
     position: relative;

@@ -1,16 +1,11 @@
 $(document).ready(function() {
+	$('#user-input-login').hide();
 	$('#register').click(function(evt) {
 		evt.preventDefault();
-		$('#login').fadeOut('slow');
-		$('#sub').fadeOut('slow');
-		$('#user-input').attr('id', 'user-input-login');
-		$('#formTitle').fadeOut('slow', function() {
-		$(this).replaceWith('<p id="formTitle">Register</p>');
+		$('#user-input').fadeOut(500);
+		$('#sub').fadeOut(500);
+		$('#register').fadeOut(500, function() {
+			$('#user-input-login').fadeIn(500);
 		});
-	});
-	$('#login').click(function(evt) {
-		evt.preventDefault();
-		console.log('Collect user information.')
-		$('#register').replaceWith('<button id="submit">Login</button>');
 	});
 });
