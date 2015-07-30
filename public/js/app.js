@@ -30,6 +30,7 @@ $(document).ready(function() {
     var createNewUser = document.getElementById('user-input');
     createNewUser.addEventListener('submit', function(e) {
       e.preventDefault();
+      setLoginStatusFalse(userAry);
       var userName = createNewUser.elements[0].value;
       var passWord = createNewUser.elements[1].value;
       if (!(userName && passWord)) {
@@ -43,43 +44,55 @@ $(document).ready(function() {
       createNewUser.elements[0].value = 'Logged in, try playing our game!';
       createNewUser.elements[1].value = '';
     });
+
     var logIn = document.getElementById('user-input-login');
     logIn.addEventListener('submit', function(e) {
       e.preventDefault();
+      console.log(userAry);
       console.log('listen');
       var userName = logIn.elements[0].value;
       var passWord = logIn.elements[1].value;
       if (!(userName && passWord)) {
         return;
       } else {
-        if(checkForDoubles(userName, userAry)){
-          if(checkForPassword(passWord, userAry)) {
-          console.log('logInStatus');
+        setLoginStatusFalse(userAry);
+          if(checkForPassword(userName, passWord, userAry)) {
+            console.log('logInStatusTrue');
           } else {
-          alert("Wrong PassWord or User name");
+            alert("Wrong Username or Password");
           }
-        } else {
-          alert("Wrong PassWord or User name");
-        }
+
       }
       logIn.elements[0].value = 'Logged in, try playing our game!';
       logIn.elements[1].value = '';
     });
   }
+
+  function setLoginStatusFalse(userAry){
+    console.log("function false running");
+    for (var i = 0; i < userAry.length; i++) {
+      // console.log("set to false");
+      userAry[i].loggedIn = false;
+      //console.dir(userAry[i].loggedIn);
+    }
+    // console.dir(userAry);
+  }
+
   function checkForDoubles(userName, userAry) {
     for (var i = 0; i < userAry.length; i++) {
-      userAry[i].loggedIn = false;
       if (userName == userAry[i].userName) return true;
       }
     return false;
   }
 
-  function checkForPassword(passWord, userAry) {
+  function checkForPassword(userName, passWord, userAry) {
     for (var i = 0; i < userAry.length; i++) {
-      userAry[i].loggedIn = false;
-      if (passWord == userAry[i].passWord){
+      if ((userName == userAry[i].userName) && (passWord == userAry[i].passWord)){
+        console.log(userAry[i].loggedIn + " before");
         userAry[i].loggedIn = true;
-       return true;
+        console.log(userAry[i].loggedIn + " after");
+        saveLocalData();
+        return true;
       }
     }
     return false;
@@ -146,7 +159,6 @@ $(document).ready(function() {
           if(flipped === cards_array.length){
             alert("You won! You used " + clicks + " clicks to find all of the pairs.");
             updateScore(clicks);
-            saveLocalData();
             flipped = 0;
             clicks = 0;
             document.getElementById('board').innerHTML = '';
@@ -169,6 +181,7 @@ $(document).ready(function() {
         });
       }
     }
+    saveLocalData();
     renderScore();
   }
 
@@ -194,7 +207,7 @@ $(document).ready(function() {
 
     for (var i = 0; i < userAry.length; i++) {
       if(userAry[i].loggedIn){
-        addUser.innerHTML = userAry[0].userName;
+        addUser.innerHTML = userAry[i].userName;
         addRow.appendChild(addUser);
         var addScore = document.createElement('td');
         addScore.innerHTML = userAry[i].score;
@@ -208,9 +221,6 @@ $(document).ready(function() {
     saveLocalData();
   } else {
     userAry = JSON.parse(localStorage.getItem('userAry'));
-    renderScore();
-    for(var i = 0; i < userAry.length; i++){
-      userAry[i].loggedIn = false;
-    }
+    //renderScore();
   }
 });
