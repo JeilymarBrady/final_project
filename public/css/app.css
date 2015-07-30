@@ -109,41 +109,12 @@ footer {
 
 #userLogin {
   background-color: white;
-  height: 400px;
-  clear: both; }
-  #userLogin p {
-    text-align: center;
-    padding-top: 2em; }
-  #userLogin button {
-    background-color: steelblue;
-    border: 1px solid rgba(70, 130, 180, 0.05);
-    border-radius: 5px;
-    padding: .25em 1em;
-    color: white;
-    box-shadow: 0 3px 0 #294d6b;
-    margin: 1em auto;
-    text-align: center;
-    display: block; }
-    #userLogin button:hover {
-      cursor: pointer;
-      background-color: #909bbd; }
-  #userLogin #user-input, #userLogin #user-input-login {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    width: 20%;
-    text-align: center; }
-    #userLogin #user-input button, #userLogin #user-input-login button {
-      background-color: steelblue;
-      border: 1px solid rgba(70, 130, 180, 0.05);
-      border-radius: 5px;
-      padding: .25em 1em;
-      color: white;
-      box-shadow: 0 3px 0 #294d6b;
-      margin: 1em auto; }
-      #userLogin #user-input button:hover, #userLogin #user-input-login button:hover {
-        cursor: pointer;
-        background-color: #909bbd; }
+  height: 300px;
+  text-align: center;
+  clear: both;
+  vertical-align: center;
+  display: block;
+  padding-top: 2em; }
 
 /* ABOUT US */
 #HeaderAbout {
@@ -165,8 +136,26 @@ footer {
     border: 3px solid orange; }
 
 /*SCORES*/
-#user-input-login, #user-input {
-  display: none; }
+#user-input, #user-input-login {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin: 0 auto;
+  width: 20%;
+  text-align: center; }
+  #user-input button, #user-input-login button {
+    background-color: steelblue;
+    border: 1px solid rgba(70, 130, 180, 0.05);
+    border-radius: 5px;
+    padding: .25em 1em;
+    color: white;
+    box-shadow: 0 3px 0 #294d6b;
+    margin: 1em auto; }
+    #user-input button:hover, #user-input-login button:hover {
+      cursor: pointer;
+      background-color: #909bbd; }
 
 #score-board {
   top: 370px;
