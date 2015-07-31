@@ -1,3 +1,4 @@
+'use strict';
 $(document).ready(function() {
   var pics;
   $.ajax({
@@ -16,7 +17,7 @@ $(document).ready(function() {
     console.log(err);
   });
 
-  ///USERS
+  //User constructor
   var Users = function(userName, passWord, score) {
     this.userName = userName;
     this.passWord = passWord;
@@ -26,7 +27,11 @@ $(document).ready(function() {
 
   var userAry = [];
 
+  //Listens for login/sign-up and checks authentication
   if(document.getElementById('user-input')){
+    var audio = new Audio('theme_song.mp3');
+    audio.play();
+    //Sign-up
     var createNewUser = document.getElementById('user-input');
     createNewUser.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -44,22 +49,20 @@ $(document).ready(function() {
       createNewUser.elements[0].value = 'Logged in, try playing our game!';
       createNewUser.elements[1].value = '';
     });
-
+    //Login
     var logIn = document.getElementById('user-input-login');
     logIn.addEventListener('submit', function(e) {
       e.preventDefault();
-      console.log(userAry);
-      console.log('listen');
       var userName = logIn.elements[0].value;
       var passWord = logIn.elements[1].value;
       if (!(userName && passWord)) {
         return;
       } else {
         setLoginStatusFalse(userAry);
-          if(checkForPassword(userName, passWord, userAry)) {
-            console.log('logInStatusTrue');
+          if(checkForAuthentication(userName, passWord, userAry)) {
           } else {
-            alert("Wrong Username or Password");
+            logIn.elements[0].value = 'Wrong username or password.';
+            logIn.elements[1].value = 'Try again.';
           }
 
       }
@@ -69,28 +72,24 @@ $(document).ready(function() {
   }
 
   function setLoginStatusFalse(userAry){
-    console.log("function false running");
     for (var i = 0; i < userAry.length; i++) {
-      // console.log("set to false");
       userAry[i].loggedIn = false;
-      //console.dir(userAry[i].loggedIn);
     }
-    // console.dir(userAry);
   }
 
   function checkForDoubles(userName, userAry) {
     for (var i = 0; i < userAry.length; i++) {
-      if (userName == userAry[i].userName) return true;
+      if (userName === userAry[i].userName){
+       return true;
       }
+    }
     return false;
   }
 
-  function checkForPassword(userName, passWord, userAry) {
+  function checkForAuthentication(userName, passWord, userAry) {
     for (var i = 0; i < userAry.length; i++) {
-      if ((userName == userAry[i].userName) && (passWord == userAry[i].passWord)){
-        console.log(userAry[i].loggedIn + " before");
+      if ((userName === userAry[i].userName) && (passWord === userAry[i].passWord)){
         userAry[i].loggedIn = true;
-        console.log(userAry[i].loggedIn + " after");
         saveLocalData();
         return true;
       }
@@ -98,6 +97,7 @@ $(document).ready(function() {
     return false;
   }
 
+  //Constructor for game's pictures
   var Picture = function(path){
     this.flipped = false;
     this.img = document.createElement('img');
@@ -115,6 +115,7 @@ $(document).ready(function() {
     };
   };
 
+  //Shuffles game's pictures array
   Array.prototype.shuffle = function() {
     var i = this.length, j, temp;
     while(--i> 0){
@@ -131,6 +132,7 @@ $(document).ready(function() {
   var flipped = 0;
   var clicks = 0;
 
+  //Pulls pictures from Imgur
   function pullFromImgur() {
     cards_array = [];
     for(var i = 0; i < 2; i++){
@@ -144,6 +146,7 @@ $(document).ready(function() {
     }
   }
 
+  //Play's game
   function gameTime(e){
     var pic = e;
     if(!(pic.visited) && values.length < 2){
@@ -152,12 +155,12 @@ $(document).ready(function() {
     }
       values.push(pic);
       clicks++;
-      if(values.length===2){
-        if(values[0].path===values[1].path){
+      if(values.length === 2){
+        if(values[0].path === values[1].path){
           flipped+=2;
           values = [];
           if(flipped === cards_array.length){
-            alert("You won! You used " + clicks + " clicks to find all of the pairs.");
+            alert('You won! You used ' + clicks + ' clicks to find all of the pairs.');
             updateScore(clicks);
             flipped = 0;
             clicks = 0;
@@ -182,7 +185,6 @@ $(document).ready(function() {
       }
     }
     saveLocalData();
-    renderScore();
   }
 
   function flip(){
@@ -195,8 +197,7 @@ $(document).ready(function() {
 
   ///LOCAL DATA
   var saveLocalData = function() {
-    localStorage.setItem("userAry", JSON.stringify(userAry));
-    console.log('hello from save local data');
+    localStorage.setItem('userAry', JSON.stringify(userAry));
   };
 
   var renderScore = function() {
@@ -217,10 +218,10 @@ $(document).ready(function() {
     }
   };
 
-  if(!(localStorage.getItem("userAry"))){
+  if(!(localStorage.getItem('userAry'))){
     saveLocalData();
   } else {
     userAry = JSON.parse(localStorage.getItem('userAry'));
-    //renderScore();
+    renderScore();
   }
 });
