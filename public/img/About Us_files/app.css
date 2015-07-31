@@ -123,7 +123,7 @@ footer {
 .us {
   width: 25%;
   display: inline-block;
-  margin: 5em 0; }
+  margin-bottom: 5em; }
   .us a {
     text-decoration: none;
     font-family: 'Montserrat', Arial, sans-serif;
@@ -134,6 +134,17 @@ footer {
     width: 150px;
     margin-bottom: 20px;
     border: 3px solid orange; }
+
+#containerP {
+  width: 50%;
+  margin: 0 25%;
+  height: 300px; }
+  #containerP #aboutInfo {
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    color: darkorange;
+    padding-bottom: 50px; }
 
 /*SCORES*/
 #user-input, #user-input-login {
@@ -176,8 +187,12 @@ footer {
   margin-top: -150px;
   background: url(img/jose-tv.svg);
   position: relative;
+  /*	// top:-200px;*/
   height: 550px; }
   #tableWrap img {
+    /*		// position: absolute;
+    		// z-index: -1;
+    */
     margin: 0 auto;
     height: 120%;
     display: block;
@@ -195,31 +210,28 @@ footer {
   text-align: center; }
 
 #score-header {
-  background: #FFD776;
-  color: steelblue; }
+  background: #FFD776; }
 
+/*}*/
 /*GameTime*/
 #boardContainer {
   width: 100%;
   display: flex;
   justify-content: center;
+  /*vertical-align: center;*/
   margin-bottom: 2em; }
 
 #gameHeader {
-  padding-top: 1em;
   color: #FFD776;
   text-align: center;
   font-family: 'Droid Sans', sans-serif; }
-
-.rowGame {
-  top: 0; }
 
 #board {
   background: black;
   border: #999 1px solid;
   border-radius: 2%;
   width: 650px;
-  height: 535px;
+  height: 540px;
   padding: 24px;
   margin: 0px auto; }
 
@@ -236,35 +248,8 @@ footer {
   cursor: pointer;
   text-align: center; }
 
-@media (min-width: 1440px) {
-  #containerP {
-    width: 50%;
-    margin: 0 25%;
-    height: 300px; }
-    #containerP #aboutInfo {
-      margin: 3em;
-      font-size: 20px;
-      line-height: 35px;
-      text-align: center;
-      color: darkorange; }
-
-  #aboutFooter {
-    margin-top: 200px; }
-
-  #aboutPage {
-    background-color: #F2F2F2; }
-
+@media (min-width: 900px) {
   #hero {
-    height: 800px; }
-
-  #score-board {
-    width: 20%;
-    margin-left: 41%; }
-
-  #score-footer {
-    height: 263px; }
-
-  #board {
-    margin-bottom: 150px; } }
+    height: 800px; } }
 
 /*# sourceMappingURL=app.css.map */
