@@ -1,0 +1,8 @@
+**/node_modules/
+public/js/deps
+procfile
+README.md
+public/**.html
+LICENSE
+package.json
+server.js
