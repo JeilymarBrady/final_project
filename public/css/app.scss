@@ -149,7 +149,7 @@ footer {
 .us {
 	width: 25%;
 	display: inline-block;
-	margin-bottom: 5em;
+	margin: 5em 0;
 	a {
 		text-decoration: none;
 		@include subtitles(orange);
@@ -198,28 +198,22 @@ footer {
 	}
 }
 
-
 #tableWrap {
 	margin-top: -150px;
 	background: url(img/jose-tv.svg);
 	position: relative;
-/*	// top:-200px;*/
 	height: 550px;
 	img {
-/*		// position: absolute;
-		// z-index: -1;
-*/		margin: 0 auto;
+		margin: 0 auto;
 		height: 120%;
 		display: block;
 		bottom: 0px;
-
-		}
+	}
 }
 
 #score-footer {
 	margin-top: 150px;
 	z-index: -1;
-	// position: absolute;
 }
 
 #main-score {
@@ -232,34 +226,35 @@ footer {
 
 #score-header {
 	background: #FFD776;
-	}
-/*}*/
+	color: steelblue;
+}
 
 /*GameTime*/
 #boardContainer{
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	/*vertical-align: center;*/
 	margin-bottom: 2em;
 }
 
 #gameHeader{
+	padding-top: 1em;
 	color: #FFD776;
 	text-align: center;
 	font-family: 'Droid Sans', sans-serif;
 }
-
+.rowGame{
+	top: 0;
+}
 #board{
   background: black;
   border:#999 1px solid;
   border-radius: 2%;
   width: 650px;
-  height: 540px;
+  height: 535px;
   padding: 24px;
   margin: 0px auto;
 }
-
 #board > img{
 	border-radius: 5%;
   background-color: none;
@@ -272,4 +267,38 @@ footer {
   padding: 2px;
   cursor: pointer;
   text-align: center;
+}
+
+@media (min-width: 1440px) {
+	#containerP{
+		width: 50%;
+		margin: 0 25%;
+	  height: 300px;
+  	#aboutInfo{
+	  	margin: 3em;
+			font-size: 20px;
+			line-height: 35px;
+			text-align: center;
+			color: darkorange;
+		}
+	}
+	#aboutFooter {
+		margin-top: 200px;
+	}
+	#aboutPage {
+		background-color: #F2F2F2;
+	}
+	#hero {
+		height: 800px;
+	}
+	#score-board {
+		width: 20%;
+		margin-left: 41%;
+	}
+	#score-footer {
+		height: 263px;
+	}
+	#board{
+		margin-bottom: 150px;
+	}
 }
