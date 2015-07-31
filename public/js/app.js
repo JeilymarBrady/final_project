@@ -102,7 +102,7 @@ $(document).ready(function() {
     this.flipped = false;
     this.img = document.createElement('img');
     this.img.visited = false;
-    this.img.logo = 'logo.png';
+    this.img.logo = 'img/logo.png';
     this.img.path = path;
     this.img.src = this.img.logo;
     this.img.addEventListener('click', function(e) {
