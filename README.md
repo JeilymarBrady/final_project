@@ -1,3 +1,4 @@
 # final_project
 Memory Game
-small changes
+
+2/2016 - Refactoring by EL.
